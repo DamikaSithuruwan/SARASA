@@ -74,7 +74,7 @@ WITH CTE ( [ProductID]
      -- ,[DataTransfer]
       ,[CustomerType]
       ,[TransStatus]
-      ,[ZDate]
+      /*,[ZDate]*/
       ,[IsPromotionApplied]
       ,[PromotionID]
       ,[IsPromotion]
@@ -181,7 +181,7 @@ AS
      -- ,[DataTransfer]
       ,[CustomerType]
       ,[TransStatus]
-      ,[ZDate]
+      /*,[ZDate]*/
       ,[IsPromotionApplied]
       ,[PromotionID]
       ,[IsPromotion]
@@ -286,7 +286,7 @@ AS
      -- ,[DataTransfer]
       ,[CustomerType]
       ,[TransStatus]
-      ,[ZDate]
+      /*,[ZDate]*/
       ,[IsPromotionApplied]
       ,[PromotionID]
       ,[IsPromotion]
@@ -391,7 +391,7 @@ AS
       --,[DataTransfer]
       ,[CustomerType]
       ,[TransStatus]
-      ,[ZDate]
+      /*,[ZDate]*/
       ,[IsPromotionApplied]
       ,[PromotionID]
       ,[IsPromotion]
@@ -419,12 +419,13 @@ AS
       ,[CurrencyRate]
       ,[ProductColorSizeID]
       ,[IsNonDiscount]) AS DuplicateCount
-  FROM dbo.TransactionDet where  CAST(ZDate as date) between '2017-09-01' and '2017-09-30')
+  FROM dbo.TransactionDet where  CAST(ZDate as date) between '2024-11-16' and '2024-11-16')
 select *
 FROM CTE
-WHERE DuplicateCount > 1
+WHERE LocationID='16' and DuplicateCount > 1
 
 --DELETE
 --FROM CTE
 --WHERE DuplicateCount > 1
  
+ --select * from Location
